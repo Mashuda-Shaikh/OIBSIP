@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tribute to Mark Zuckerberg</title>
+  <title>Tribute Page</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,7 +11,7 @@
       color: navy;
       margin: 10px;
       padding: 10px;
-      border:5px solid black;
+      border: 5px solid black;
     }
 
     .container {
@@ -26,7 +26,7 @@
       color: rgb(12, 12, 12);
       padding: 20px 10px;
       border-radius: 0 0 20px 20px;
-      line-height:1.5;
+      line-height: 1.5;
     }
 
     img {
@@ -36,9 +36,9 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    .top
-    {
-      text-align:right;
+
+    .top {
+      text-align: right;
     }
 
     h2 {
@@ -48,25 +48,71 @@
 
     p {
       font-size: 18px;
-      line-height: 2.5;
+      line-height: 1.5;
       text-align: justify;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #222;
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 15px 20px;
+      margin: 30px auto;
+      width: 80%;
+      border-radius: 10px;
+    }
+
+    .blackonwhite {
+      background-color: white;
+      color: black;
+    }
+
+    .whiteonblack {
+      background-color: black;
+      color: white;
+    }
+
+    .bio-section {
+      margin: 40px 0;
+    }
+
+    .bio-box {
+      background-color: #f4faff;
+      border-left: 6px solid #2b81dd;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      border-radius: 10px;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .bio-box p {
+      margin-bottom: 15px;
+    }
+
+    .bio-box strong {
+      color: #00509e;
+    }
+
+    .bio-box em {
+      font-style: italic;
+      color: #444;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
+      padding: 15px;
+      font-size: 16px;
+      color: #050a0b;
+      border: 2px solid black;
+      margin-top: 40px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
     }
-    .blackonwhite
+    .foot
     {
-      background-color:white;
-      color:black;
-    }
-    .whiteonblack
-    {
-      background-color: black;
-      color: white;
+      text-align: center;
     }
   </style>
 </head>
@@ -79,25 +125,45 @@
 
     <img src="MARKZUCKERBERG.jpg" alt="Mark Zuckerberg">
 
-    <h2>Why I Admire Him</h2>
-    <p>
-      <span class="blackonwhite">Mark Zuckerberg is one of the most influential tech entrepreneurs of our time. At a young age, he co-founded Facebook, a platform that revolutionized how people connect globally. I admire his vision, leadership, and bold decisions—especially his transformation of Facebook into Meta to lead the future of virtual reality and the metaverse.</span>
-    </p>
+    <blockquote>
+      "The biggest risk is not taking any risk... In a world that is changing really quickly, the only strategy that is guaranteed to fail is not taking risks." – Mark Zuckerberg
+    </blockquote>
 
-    <p>
-      <span class="whiteonblack">Despite numerous challenges, he stayed focused on innovation and growth. His work has connected billions of people and has opened new opportunities in technology, business, and communication. His coding skills and passion for building products that connect people inspire me deeply.</span>
-    </p>
+    <section class="bio-section">
+      <h2>Biography</h2>
+      <div class="bio-box">
+        <p>
+          <strong>Mark Elliot Zuckerberg</strong> was born on <strong>May 14, 1984</strong>, in White Plains, New York. From a young age, he displayed a strong interest in computers and software development. While studying at <strong>Harvard University</strong>, he launched a site called <em>"The Facebook"</em> with his roommates in 2004.
+        </p>
+        <p>
+          The platform quickly grew beyond college campuses and evolved into one of the most powerful social networking platforms globally. Zuckerberg left Harvard to focus on Facebook full-time, leading it to success with billions of users worldwide.
+        </p>
+        <p>
+          In 2021, he renamed the company to <strong>Meta</strong> to focus on building the future of the internet—<em>the metaverse</em>. Alongside his business ventures, Mark supports global education, science, and equality through the <strong>Chan Zuckerberg Initiative</strong>, which he co-founded with his wife, Priscilla Chan.
+        </p>
+      </div>
+    </section>
 
+    <section class="bio-section">
+  <div class="bio-box">
     <p>
-      <span class="blackonwhite">Zuckerberg is not only a tech innovator but also a philanthropist through the Chan Zuckerberg Initiative, which works to advance human potential and promote equality. His commitment to using technology for social good is truly inspiring.</span>
+      <strong>Mark Zuckerberg</strong> is one of the most influential tech entrepreneurs of our time. At a young age, he co-founded Facebook—a platform that changed the way people connect globally. I admire his vision, bold leadership, and his courage to take big steps, like transforming Facebook into <strong>Meta</strong> to lead the future of the metaverse.
     </p>
-
     <p>
-      <span class="whiteonblack"> Zuckerberg is also known for his interest in learning new things. He has taken on personal challenges like learning different languages and reading many books. He believes in working hard, staying focused, and always improving. Many young people look up to him as a role model for building something big from a small idea.</span>
+      Despite many challenges, he stayed focused on growth and innovation. His work has connected billions of people and opened new paths in technology and communication. His passion for building and problem-solving truly inspires me.
     </p>
+    <p>
+      He is also a philanthropist through the <strong>Chan Zuckerberg Initiative</strong>, which works to promote equality and improve human potential. His commitment to using technology for social good is something I deeply respect.
+    </p>
+    <p>
+      Mark is a continuous learner. He sets personal challenges like learning new languages and reading more books. He believes in working hard, staying curious, and always improving. These qualities make him a strong role model for many young minds.
+    </p>
+  </div>
+</section>
 
     <footer>
-      Created with 💙 by an admirer of innovation and leadership.
+      <hr />
+      <p class="foot">Created with 💙 by an admirer of innovation and leadership.</p>
     </footer>
   </div>
 </body>
