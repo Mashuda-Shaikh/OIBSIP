@@ -3,14 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>OIBSIP Task Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .dashboard {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #2b2b2b;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 15px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #2b81dd;
+      padding: 12px 25px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #105ba3;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; padding-top: 50px;">
-  <h1>Welcome to My OIBSIP Tasks</h1>
-  <ul style="list-style: none; font-size: 20px;">
-    <li><a href="task_one/" target="_blank">Task One</a></li>
-    <li><a href="task_two/" target="_blank">Task Two</a></li>
-    <li><a href="task_three/" target="_blank">Task Three</a></li>
-    <li><a href="task_four/" target="_blank">Task Four</a></li>
-  </ul>
+<body>
+  <div class="dashboard">
+    <h1>Welcome to My OIBSIP Tasks</h1>
+    <ul>
+      <li><a href="task_one/" target="_blank">Task One</a></li>
+      <li><a href="task_two/" target="_blank">Task Two</a></li>
+      <li><a href="task_three/" target="_blank">Task Three</a></li>
+      <li><a href="task_four/" target="_blank">Task Four</a></li>
+    </ul>
+  </div>
 </body>
 </html>
