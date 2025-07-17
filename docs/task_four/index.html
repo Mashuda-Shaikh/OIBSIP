@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login System</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #8360c3, #2ebf91);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      width: 350px;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 14px;
+      background-color: #2ebf91;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #27a27b;
+    }
+
+    .toggle {
+      margin-top: 15px;
+      color: #666;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    #securedPage {
+      display: none;
+    }
+
+    .success {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" id="authContainer">
+    <div class="emoji">🔐</div>
+    <h2 id="formTitle">Login</h2>
+    <input type="text" id="username" placeholder="👤 Username" />
+    <input type="password" id="password" placeholder="🔒 Password" />
+    <button onclick="handleSubmit()">Login</button>
+    <p class="toggle" onclick="toggleForm()">Don't have an account? Register</p>
+    <p id="message"></p>
+  </div>
+
+  <div class="container" id="securedPage">
+    <div class="emoji">✅</div>
+    <h2>Welcome!</h2>
+    <p>You have successfully logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    let isLogin = true;
+
+    function toggleForm() {
+      isLogin = !isLogin;
+      document.getElementById("formTitle").textContent = isLogin ? "Login" : "Register";
+      document.querySelector("button").textContent = isLogin ? "Login" : "Register";
+      document.querySelector(".toggle").textContent = isLogin
+        ? "Don't have an account? Register"
+        : "Already have an account? Login";
+      document.getElementById("message").textContent = "";
+    }
+
+    function handleSubmit() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+
+      if (!username || !password) {
+        message.textContent = "⚠️ Please fill in all fields.";
+        message.className = "error";
+        return;
+      }
+
+      if (isLogin) {
+        const storedPass = localStorage.getItem(username);
+        if (storedPass && storedPass === password) {
+          document.getElementById("authContainer").style.display = "none";
+          document.getElementById("securedPage").style.display = "block";
+        } else {
+          message.textContent = "❌ Invalid username or password.";
+          message.className = "error";
+        }
+      } else {
+        if (localStorage.getItem(username)) {
+          message.textContent = "⚠️ User already exists!";
+          message.className = "error";
+        } else {
+          localStorage.setItem(username, password);
+          message.textContent = "✅ Registered successfully! You can now log in.";
+          message.className = "success";
+          toggleForm();
+        }
+      }
+    }
+
+    function logout() {
+      document.getElementById("securedPage").style.display = "none";
+      document.getElementById("authContainer").style.display = "block";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("message").textContent = "";
+    }
+  </script>
+</body>
+</html>
