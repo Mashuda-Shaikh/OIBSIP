@@ -1,1 +1,189 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List Web App</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: #0f2027;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  color: #fff;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff10;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+form input, form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #28a745;
+  padding: 0.7rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task .actions button {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.task.complete {
+  background-color: #d4edda;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List Web App</h1>
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea id="description" placeholder="Description" required></textarea>
+      <button type="submit">Save</button>
+    </form>
+
+    <h2>Pending Tasks</h2>
+    <ul id="pendingTasks" class="task-list"></ul>
+
+    <h2>Completed Tasks</h2>
+    <ul id="completedTasks" class="task-list"></ul>
+  </div>
+
+  <script>
+    let pendingTasks = [];
+let completedTasks = [];
+
+document.getElementById("taskForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const title = document.getElementById("title").value.trim();
+  const description = document.getElementById("description").value.trim();
+
+  if (!title || !description) return;
+
+  const task = {
+    id: Date.now(),
+    title,
+    description,
+    dateAdded: new Date().toLocaleString()
+  };
+
+  pendingTasks.push(task);
+  renderTasks();
+  this.reset();
+});
+
+function renderTasks() {
+  const pendingEl = document.getElementById("pendingTasks");
+  const completeEl = document.getElementById("completedTasks");
+
+  pendingEl.innerHTML = "";
+  completeEl.innerHTML = "";
+
+  pendingTasks.forEach(task => {
+    const taskEl = createTaskElement(task, false);
+    pendingEl.appendChild(taskEl);
+  });
+
+  completedTasks.forEach(task => {
+    const taskEl = createTaskElement(task, true);
+    completeEl.appendChild(taskEl);
+  });
+}
+
+function createTaskElement(task, isComplete) {
+  const li = document.createElement("li");
+  li.className = "task";
+  if (isComplete) li.classList.add("complete");
+
+  li.innerHTML = `
+    <div>
+      <strong>${task.title}</strong><br>
+      ${task.description}<br>
+      <small>Added: ${task.dateAdded}</small>
+      ${isComplete ? `<br><small>Completed: ${task.dateCompleted}</small>` : ""}
+    </div>
+    <div class="actions">
+      ${!isComplete ? `<button onclick="completeTask(${task.id})">✔</button>` : ""}
+      <button onclick="editTask(${task.id}, ${isComplete})">✎</button>
+      <button onclick="deleteTask(${task.id}, ${isComplete})">🗑</button>
+    </div>
+  `;
+  return li;
+}
+
+function completeTask(id) {
+  const index = pendingTasks.findIndex(task => task.id === id);
+  if (index !== -1) {
+    const task = pendingTasks.splice(index, 1)[0];
+    task.dateCompleted = new Date().toLocaleString();
+    completedTasks.push(task);
+    renderTasks();
+  }
+}
+
+function deleteTask(id, isComplete) {
+  const list = isComplete ? completedTasks : pendingTasks;
+  const index = list.findIndex(task => task.id === id);
+  if (index !== -1) {
+    list.splice(index, 1);
+    renderTasks();
+  }
+}
+
+function editTask(id, isComplete) {
+  const list = isComplete ? completedTasks : pendingTasks;
+  const task = list.find(t => t.id === id);
+  if (task) {
+    const newTitle = prompt("Edit Title:", task.title);
+    const newDesc = prompt("Edit Description:", task.description);
+    if (newTitle && newDesc) {
+      task.title = newTitle.trim();
+      task.description = newDesc.trim();
+      renderTasks();
+    }
+  }
+}
+renderTasks();
+  </script>
+</body>
+</html>
