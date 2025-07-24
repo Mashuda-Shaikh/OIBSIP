@@ -1,94 +1,29 @@
-# 🧑‍💻 OASIS INFOBYTE INTERNSHIP PROJECT
+# Internship Projects - Web Development
 
-This project was completed as part of my **Web Development Internship** at **Oasis Infobyte** during **July 2025**. The internship focused on strengthening front-end development skills through real-world mini projects.
-<br>
+👋 Welcome to my Internship Projects Repository!
 
-Thanks to **🚀 Oasis Infobyte** for the amazing internship experience!
-<hr>
+This repository contains the tasks I completed during my web development internship at Oasis Infobyte. Each task helped me improve my frontend skills through real-world practice. The projects are organized into separate folders with their own README files describing the details of each submission.
 
+## 📁 Contents
 
-# 🔢 Calculator Web App
+1. `Calculator Web App` - A simple, functional calculator made with HTML, CSS, and JavaScript.
+2. `Tribute Page` - A static webpage that pays tribute to a famous personality.
+3. `To-Do Web App` - A task management app where users can add, complete, and track tasks.
+4. `Login Authentication System` - A basic login system with user authentication logic using JavaScript.
 
-A simple calculator built using HTML, CSS, and JavaScript. This project performs basic arithmetic operations such as addition, subtraction, multiplication, and division.
+Each project folder includes:
+- Project objective
+- Development steps
+- Tools used
+- Final outcome
 
-## 🚀 Features
-- Interactive and easy-to-use UI
-- Real-time result updates
-- Responsive design for desktop & mobile
+## 🔧 Tech Stack Used
 
-## 🛠️ Tech Stack
-- HTML
-- CSS
-- JavaScript
+- HTML5  
+- CSS3  
+- JavaScript  
+- GitHub (for version control and deployment)
 
-## 🌐 Live Demo
-[Click here to view](https://mashuda-shaikh.github.io/OIBSIP/task_one/)
-<br>
-<hr>
+---
 
-# 🧑‍💼 Mark Zuckerberg Tribute Page
-
-A tribute page honoring Mark Zuckerberg. This project was created to practice basic HTML and CSS concepts like layout, styling, and responsiveness.
-
-## 📌 Features
-- Clean, elegant design
-- Image and text section
-- Mobile-responsive layout
-
-## 🛠️ Tech Stack
-- HTML
-- CSS
-
-
-## 🌐 Live Demo
-[View Live Page](https://mashuda-shaikh.github.io/OIBSIP/task_two/)
-<br>
-<hr>
-
-
-# ✅ To-Do Web App
-
-A simple and clean To-Do app that lets users add tasks, mark them as completed, and keep track of pending items.
-
-## 📌 Features
-- Add new tasks
-- Mark tasks as completed
-- Separate lists for pending and completed tasks
-- Minimal UI
-
-## 🛠️ Tech Stack
-- HTML
-- CSS
-- JavaScript
-
-
-## 🌐 Live Demo
-[Try it here](https://mashuda-shaikh.github.io/OIBSIP/task_three/)
-<br>
-<hr>
-
-
-# 🔐 Login Authentication System
-
-A simple and stylish login system built using HTML, CSS, and JavaScript. It allows user registration and login functionality with client-side validation.
-
-## 🔑 Features
-- Register and login forms
-- Input validation
-- Stylish UI design
-- Secured access simulation
-
-## 🛠️ Tech Stack
-- HTML
-- CSS
-- JavaScript
-
-> *Note: This is a front-end only project. No actual server-side authentication.*
-
-## 🌐 Live Demo
-[Check it Live](https://mashuda-shaikh.github.io/OIBSIP/task_four/)
-<br>
-<hr>
-
-## 👩‍💻 Author
-**Mashuda Shaikh**
+💼 These projects are part of my internship experience and helped me strengthen my skills as a web developer. Feel free to explore!
