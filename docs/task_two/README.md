@@ -14,3 +14,8 @@ To design a responsive tribute page that highlights the life, achievements, and 
 
 ## 📊 Outcome
 A clean, responsive single-page website that pays tribute to the chosen personality. It showcases key facts and design elements.
+
+
+🔗 **Live Output:** 
+
+[View Tribute Page](https://Mashuda-Shaikh.github.io/OIBSIP/task_two/)
