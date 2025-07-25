@@ -16,3 +16,7 @@ To create a simple and functional calculator that can perform basic arithmetic o
 
 ## 📊 Outcome
 A fully working calculator that performs basic arithmetic operations with a neat UI. Hosted and viewable in the browser.
+
+🔗 **Live Output:** 
+
+[View Calculator](https://Mashuda-Shaikh.github.io/OIBSIP/task_one/)
